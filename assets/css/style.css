@@ -1,0 +1,18 @@
+/*------------Index Page */
+section {
+    text-align: center;
+    margin: 200px 50px;
+}
+
+.title {
+    color: rgb(8, 8, 8);
+    font-size: 30px;
+    margin-bottom: 100px;
+}
+
+.start-btn {
+    font-size: 25px;
+    color: white;
+    background-color: green;
+    margin-top: 50x;
+}
