@@ -8,9 +8,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Trivia quiz</title>
 </head>
-<body>
-    <div class="container">
-        
+<body id="quiz-page-background">
+    <div id="quiz-background">
+        <div class="container">
+        <div id="difficulty"></div>
+        <div class="questions"></div>
+        </div>
+        <div class="answer-choices">
+        <div class="choices row justify-content-center">
+            <p class="choice-letter col-1">A</p>
+            <p class="choice col-5" data-number="1">Choice1</p>
+        </div>
+        <div class="choices row justify-content-center">
+            <p class="choice-letter col-1">B</p>
+            <p class="choice col-5" data-number="2">Choice2</p>
+        </div>
+        <div class="choices row justify-content-center">
+            <p class="choice-letter col-1">C</p>
+            <p class="choice col-5" data-number="3">Choice3</p>
+        </div>
+        <div class="choices row justify-content-center">
+            <p class="choice-letter col-1">D</p>
+            <p class="choice col-5" data-number="4">Choice4</p>
+        </div>
+        </div>
     </div>
+<script src="assets/js/quiz.js"></script>
 </body>
 </html>

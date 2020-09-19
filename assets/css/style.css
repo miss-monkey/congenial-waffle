@@ -1,4 +1,7 @@
 /*------------------------Index Page */
+
+
+
 #main-page-background {
     background-color: #0049b7;
 
@@ -44,6 +47,46 @@
 
 
 /*------------------------ Quiz */
+
+#quiz-page-background {
+    background-color: #0049b7;
+}
+
+#quiz-background {
+    background-color: #0049b7;
+    border: solid 2px yellow;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 50px;
+    text-align: center;
+    box-sizing: content-box;
+}
+
+.answer-choices {
+    color: white;
+    text-align: center;
+   
+ 
+}
+
+.choice {
+    text-align: center;
+
+}
+
+.choice-letter, .choice {
+    border: solid 2px yellow;
+    border-radius: 10px;
+    height: auto;
+    margin: 10px 2px;
+    text-align: center;
+    box-sizing: content-box;
+    background-color: #00339c;
+}
+
+
+
+
 .red {
     background-color: red;
 }
