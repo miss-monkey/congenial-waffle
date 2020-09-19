@@ -1,18 +1,55 @@
-/*------------Index Page */
-section {
+/*------------------------Index Page */
+#main-page-background {
+    background-color: #0049b7;
+
+}
+
+.main-page {
+    padding-top: 150px;
+    margin: 0;
     text-align: center;
-    margin: 200px 50px;
+
+
 }
 
-.title {
-    color: rgb(8, 8, 8);
-    font-size: 30px;
-    margin-bottom: 100px;
-}
-
-.start-btn {
-    font-size: 25px;
+.main-page p {
     color: white;
-    background-color: green;
-    margin-top: 50x;
+    padding: 50px;
 }
+.main-page h2 {
+    color: white;
+    border: solid yellow 5px;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+}
+
+
+
+.btn-success {
+    padding: 10px;
+}
+
+.btn-success a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/*------------------------ Quiz */
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+/*------------------------ Score Page */
