@@ -1,51 +1,52 @@
+const quiz = document.getElementById('answers');
+let output = [];
+const timer = [];
+const questionCounter = [];
+const rightAnswersCounter = [];
+let data;
+let currentQuestion = 0; // new variable to track where we are in the array of 10 questions. We start at 0, since that will the the first index in the array
+
+
 window.onload = getData();
 async function getData() {
-    const responce = await fetch("https://opentdb.com/api.php?amount=1&category=9&type=multiple");
+    const responce = await fetch("https://opentdb.com/api.php?amount=10&category=9&type=multiple");
     data = await responce.json();
     console.log(data);
-    useApiData(data);
+    loadNextRound(data);
 }
 
-function useApiData(data) {
-    const question = data.results[0].question;
-    const difficulty = data.results[0].difficulty;
-    const answer1 = data.results[0].correct_answer;
-    const answer2 = data.results[0].incorrect_answers[0];
-    const answer3 = data.results[0].incorrect_answers[1];
-    const answer4 = data.results[0].incorrect_answers[2];
 
-   
-
-    // let allAnswers = [answer1, answer2, answer3, answer4];
-    // let choices = Array.from(document.getElementsByClassName('choice-text'));
-    
-
+function loadNextRound(data) {
+    const question = data.results[currentQuestion].question;
+    const difficulty = data.results[currentQuestion].difficulty;
+    let correctAnswer = data.results[currentQuestion].correct_answer;
+    const answer1 = data.results[currentQuestion].correct_answer;
+    const answer2 = data.results[currentQuestion].incorrect_answers[0];
+    const answer3 = data.results[currentQuestion].incorrect_answers[1];
+    const answer4 = data.results[currentQuestion].incorrect_answers[2];
+    const answers = [answer1, answer2, answer3, answer4];
     document.getElementById("question").innerHTML = question;
     document.getElementById("difficulty").innerHTML = `Difficulty: ${difficulty}`;
-    document.getElementById("choice1").innerHTML = answer1;
-    document.getElementById("choice2").innerHTML = answer2;
-    document.getElementById("choice3").innerHTML = answer3;
-    document.getElementById("choice4").innerHTML = answer4;
 
+
+    answers.forEach(answer => {
+            output.push(
+                `<div class="row" data-toggle="buttons" >
+                    <label class="col-6 options">
+                        <input type="radio" name="option">
+                        ${answer}
+                    </label>
+                </div>` 
+        )
+        quiz.innerHTML = output.join('');
+    });
 }
 
-$('div .a').click(function() {
-    $(this).children().addClass('green');
-    $('div .b, div .c, div .d').hide('slow');
-
-})
-
-$('div .b').click(function() {
-    $(this).children().addClass('red');
-    $('div .a, div .c, div .d').hide('slow');
-})
-
-$('div .c').click(function() {
-    $(this).children().addClass('red');
-    $('div .b, div .a, div .d').hide('slow');
-})
-
-$('div .d').click(function() {
-    $(this).children().addClass('red');
-    $('div .b, div .c, div .a').hide('slow');
+document.querySelector('#next').addEventListener('click', () => {
+    quiz.innerHTML = "";
+    output = [];
+    currentQuestion += 1;
+    
+    loadNextRound(data);
+    
 })
