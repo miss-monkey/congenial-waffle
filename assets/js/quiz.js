@@ -1,14 +1,17 @@
-let quiz = document.getElementById('answers');
+let quiz = document.querySelector('.answers');
 let output = [];
 let timer = [];
 let questionCounter = [];
 let score = 0;
 let data;
 let currentQuestion = 0; // new variable to track where we are in the array of 10 questions. We start at 0, since that will the the first index in the array
-
+let choice;
+let quizPage;
 
 window.onload = function() {
-    $('#next').hide('slow');
+    $('#see-your-score').hide();
+    $('#next').hide();
+    $('.score-page').hide();
     $('.q1').addClass('green');
     getData();
 }
@@ -37,9 +40,9 @@ function loadNextRound(data) {
     answers.forEach(answer => {
         answers = Math.floor(Math.random() * 4);
             output.push(
-                `<div class="row justify-center" data-toggle="buttons">
-                    <label class="col options" value="${answer}">
-                        <input type="radio" name="option" class="choices" value="${answer}">
+                `<div class="row d-flex justify-content-center js-otput no-gutters" >
+                    <label class="col options" data-toggle="buttons">
+                        <input  type="radio" name="option"  class="choices" value="${answer}">
                         ${answer}
                     </label>
                 </div>` 
@@ -47,8 +50,8 @@ function loadNextRound(data) {
     });
     quiz.innerHTML = output.join('');
     
-        
    document.querySelectorAll('.choices').forEach(choice => {
+       
          choice.addEventListener('click', () => {
             if (choice.value == correctAnswer) { 
                 score++;
@@ -71,7 +74,9 @@ function loadNextRound(data) {
                     
                    
                 if (questionCounter < 10){
-                    $('#next').show()
+                    $('#next').show();
+                } else if(questionCounter == 10) {
+                    $('#see-your-score').show();
                 }
                 });
             }
@@ -91,9 +96,9 @@ document.querySelector('#next').addEventListener('click', () => {
     questionCounter++;
     document.getElementById("question-counter").innerHTML = questionCounter;
     loadNextRound(data);
-
-//-------------- Status Bar
     $('#next').hide('slow'); 
+//-------------- Status Bar
+    
     if(questionCounter == 2) {
         $('.q2').addClass('green');
     } else if(questionCounter == 3) {
@@ -115,7 +120,13 @@ document.querySelector('#next').addEventListener('click', () => {
     }
 });
 
+//------------- Score Page
+document.querySelector('#see-your-score').addEventListener('click', () => {
+    $('#quiz-background').hide();
+    $('.score-page').show();
 
+
+})
 
 
 

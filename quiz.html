@@ -9,40 +9,46 @@
     <title>Trivia quiz</title>
 </head>
 <body id="quiz-page-background">
-            <div id="score-container">
-                <h4>Your score is: <span id="score"></span></h4>
-            </div>
-        <div id="quiz-background">
-            <div class="container-fluid">
-               
-                <div class="row status-bar no-gutters">
-                    
-                        <div class="q1 col-2 border-0"></div>
-                        <div class="q2 col-1 border-0"></div>
-                        <div class="q3 col-1"></div>
-                        <div class="q4 col-1"></div>
-                        <div class="q5 col-1"></div>
-                        <div class="q6 col-1"></div>
-                        <div class="q7 col-1"></div>
-                        <div class="q8 col-1"></div>
-                        <div class="q9 col-1"></div>
-                        <div class="q10 col-2"></div>
-                        <div class=" b col-12 text-center"><p class="text-center c"><span id="question-counter"></span> / 10</p></div>
-                </div>
-            </div>
-            <div class="quiz-container">
-                <div id="question"></div>
-                <div id="difficulty"></div>
-                <div class="answers"></div>
-                <div class="z">
-                <div class="row no-gutters d-flex justify-content-center ">
-                    <div class="col next-button-container">
-                        <button id="next">Next</button>
-                    </div>
-                </div>
-                </div>
+    <div id="quiz-background">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center status-bar no-gutters">
+                <div class="q1 col-2 border-0"></div>
+                <div class="q2 col-1 border-0"></div>
+                <div class="q3 col-1"></div>
+                <div class="q4 col-1"></div>
+                <div class="q5 col-1"></div>
+                <div class="q6 col-1"></div>
+                <div class="q7 col-1"></div>
+                <div class="q8 col-1"></div>
+                <div class="q9 col-1"></div>
+                <div class="q10 col-2"></div>
+                <div class=" b col-12 text-center"><p class="text-center c"><span id="question-counter"></span> / 10</p></div>
             </div>
         </div>
+        <div class="quiz-container">
+            <div id="question"></div>
+            <div id="difficulty"></div>
+            <div class="answers"></div>
+            <div class="z">
+            <div class="row no-gutters d-flex justify-content-center ">
+                <div class="col next-button-container">
+                    <button id="next">Next</button>
+                </div>
+            </div>
+            <div class="row no-gutters d-flex justify-content-center ">
+                <div class="col score-button-container">
+                    <button id="see-your-score">See Your Score</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="score-page">
+        <div id="score-container">
+            <h4>Your score is: <span id="score"></span></h4>
+        </div>
+    </div>
+        
 <script src="assets/js/quiz.js"></script>
 </body>
 </html>
