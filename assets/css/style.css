@@ -46,22 +46,34 @@
 
 
 
-/*------------------------ Quiz */
+/*------------------------ Status Bar */
 
 h4 {
     text-align: center;
+    background-color: black;
 }
 
-.status-bar {
-    border: 1px solid black;
-    border-radius: 10px;
+.container {
     height: 20px;
     padding: 0;
 }
 
+.status-bar {
+    border: transparent solid 1px;
+    border-radius: 10px;
+    height: 25px;
+    padding: 0;
+    position: relative;
+    background-color: black;
+}
+
+
+
+
 .q1 {
     border: solid transparent;
     border-radius: 10px 0 0 10px;
+    padding: 0;
 }
 
 .q10 {
@@ -69,45 +81,95 @@ h4 {
     border-radius: 0 10px 10px 0;
 }
 
+.b {
+    color: white;
+    text-align:  center;
+    z-index: 20;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.c {
+    padding: 0;
+    margin: 0;
+}
+
+
+/*------------------------ Quiz */
+
 #quiz-page-background {
     background-color: #0049b7;
 }
 
-#border {
-    border: solid 1px transparent;
-    margin: 5%;
-    padding: auto;
+#quiz-background {
+    justify-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 10%;
+    margin: 0;
 }
 
 
 .quiz-container {
-    padding: 10%;
-    margin: 10%;
+    padding: 10px;
+    margin: 0;
+    justify-items: center;
     text-align: center;
-    box-sizing: content-box;
-    max-width: 800px;
+    /* position: relative; */
+    /* box-sizing: content-box; */
+ 
 }
 
 #question {
     color: white;
-    font-size: 25px;
+    font-size: 20px;
+    margin-top: 10%;
 }
 
 #difficulty {
     color: white;
+    font-size: 12px;
+    margin: 10px;
+    text-decoration: underline;
 }
 
+
+
+
+.choices {
+    position: absolute;
+    left: 5px;
+    bottom: 4px;
+    height: 25px;
+    width: 25px;
+    margin: auto;
+
+}
 
 .options {
     color: white;
     border: solid 1px yellow;
     border-radius: 25px;
     height: auto;
-    margin: 10px 30px;
-    padding: 10px;
+    margin: 10px;
+    padding: 5px;
     text-align: center;
-    box-sizing: content-box;
     background-color: #00339c;
+    font-size: 15px;
+    max-width: 800px;
+    position: relative;
+
+}
+
+
+
+.next-button-container {
+    padding: 5px;
+    max-width: 800px;
+    height: auto;
+    margin: 0;
 
 }
 
@@ -115,8 +177,6 @@ h4 {
 #next {
     float: right;
     text-align: center;
-    margin-right: 10%;
-    margin-top: -30px;
     border: solid 1px white;
     border-radius: 5px;
     width: 100px;
@@ -124,7 +184,10 @@ h4 {
     background-color: green;
     color: white;
 
+
+
 }
+
 
 
 /*------------------------ Color classes */
