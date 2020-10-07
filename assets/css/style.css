@@ -203,7 +203,6 @@
 }
 
 
-    
 
 .score-page-heading h4 {
     color: white;
@@ -223,6 +222,11 @@
 
 #back-to-main-page, #play-again {
     margin-top: 55px;
+}
+
+.back-to-main-page a {
+    text-decoration: none;
+    color: white;
 }
 
 

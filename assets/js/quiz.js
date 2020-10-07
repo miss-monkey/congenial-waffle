@@ -8,8 +8,8 @@ let currentQuestion = 0; // new variable to track where we are in the array of 1
 let choice;
 let quizPage;
 
-window.onload = function() {
-    $('#see-your-score').hide();
+window.onload = function () {
+    // $('#see-your-score').hide();
     $('#next').hide();
     $('.score-page').hide();
     $('.q1').addClass('green');
@@ -124,10 +124,18 @@ document.querySelector('#next').addEventListener('click', () => {
 document.querySelector('#see-your-score').addEventListener('click', () => {
     $('#quiz-background').hide();
     $('.score-page').show();
+});
 
-
-})
-
-
-
-   
+document.querySelector('.play-again').addEventListener('click', () => {
+    $('#see-your-score').hide();
+    quiz.innerHTML = "";
+    output = [];
+    questionCounter = 0;
+    score = 0;
+    $('#quiz-background').show();
+    $('#next').hide();
+    $('.score-page').hide();
+    $('.q1').addClass('green');
+    getData();
+});
+    
