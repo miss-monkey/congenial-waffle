@@ -48,15 +48,13 @@
 
 /*------------------------ Status Bar */
 
-h4 {
-    text-align: center;
-}
 
-.container {
+
+/* .container {
     height: 20px;
     padding: 0;
     justify-content: center;
-}
+} */
 
 .status-bar {
 
@@ -166,7 +164,7 @@ h4 {
 
 
 
-.next-button-container, .score-button-container{
+.btn-container{
     padding: 5px;
     max-width: 500px;
     height: auto;
@@ -187,7 +185,7 @@ h4 {
 }
 
 #see-your-score {
-    text-align: center;
+   text-align: center;
     border: solid 1px white;
     border-radius: 5px;
     width: 200px;
@@ -195,9 +193,41 @@ h4 {
     background-color: green;
     color: white;
     margin-top: 25px;
+}
+
+/*------------------------ Score Page */
+.score-container {
+    margin-top: 25%;
+    
+
+}
 
 
+    
 
+.score-page-heading h4 {
+    color: white;
+    text-align: center;
+}
+
+.back-to-main-page, .play-again {
+    text-align: center;
+    border: solid 1px white;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    background-color: green;
+    color: white;
+
+}
+
+#back-to-main-page, #play-again {
+    margin-top: 55px;
+}
+
+
+.score-page-buttons {
+    margin-top: 10%;
 }
 
 
