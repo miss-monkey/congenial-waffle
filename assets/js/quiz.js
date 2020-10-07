@@ -25,6 +25,15 @@ async function getData() {
     document.getElementById("question-counter").innerHTML = questionCounter;
 }
 
+function shuffleOptions(options) {
+    for (let i = options.length - 1; i > 0; i--) {
+        const rand = Math.floor(Math.random() * i)
+        const temp = options[i]
+        options[i] = options[rand]
+        options[rand] = temp
+    }
+    return options;
+}
 
 function loadNextRound(data) {
     let question = data.results[currentQuestion].question;
@@ -33,7 +42,7 @@ function loadNextRound(data) {
     let answer2 = data.results[currentQuestion].incorrect_answers[0];
     let answer3 = data.results[currentQuestion].incorrect_answers[1];
     let answer4 = data.results[currentQuestion].incorrect_answers[2];
-    var answers = [correctAnswer, answer2, answer3, answer4];
+    var answers = shuffleOptions([correctAnswer, answer2, answer3, answer4]);
     document.getElementById("question").innerHTML = question;
     document.getElementById("difficulty").innerHTML = `Difficulty: ${difficulty}`;
 
@@ -58,7 +67,9 @@ function loadNextRound(data) {
                 document.getElementById("score").innerHTML = score;
                 document.querySelectorAll('.options').forEach(option => {
                     option.addEventListener('click', () => {
-                    $(option).addClass('green')
+                    if ($(option).find('input').first().prop('disabled')) return
+                    $(option).addClass('green');
+                    $(option).parents().closest('div.answers').find('input').attr("disabled", true);
                 }, {once: true});
 
                 if (questionCounter < 10){
@@ -69,7 +80,9 @@ function loadNextRound(data) {
             } else {
                 document.querySelectorAll('.options').forEach(option => {
                     option.addEventListener('click', () => { 
+                        if ($(option).find('input').first().prop('disabled')) return
                         $(option).addClass('red');
+                        $(option).parents().closest('div.answers').find('input').attr("disabled", true);
                     });
                     
                    
