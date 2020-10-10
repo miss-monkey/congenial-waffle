@@ -154,7 +154,19 @@ div.container.status {
 }
 
 
+
 /*------------------------ Quiz */
+.menu-buttons {
+    padding-top: 10%;
+
+}
+
+/* button a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+} */
+
 
 #quiz-page-background {
     background-color: #0049b7;
@@ -163,10 +175,9 @@ div.container.status {
 }
 
 #quiz-background {
-    /* justify-items: center; */
     width: 100vw;
     height: 100vh;
-    padding: 10%;
+    padding: 4%;
     margin: 0;
 }
 
@@ -174,14 +185,13 @@ div.container.status {
 .quiz-container {
     padding: 10px;
     margin: 0;
-    /* justify-items: center; */
     text-align: center;
 }
 
 #question {
     color: white;
     font-size: 20px;
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 #difficulty {
@@ -242,14 +252,10 @@ div.container.status {
     margin-top: 20%;
 }
 
-#see-your-score {
+.see-your-score {
    text-align: center;
-    border: solid 1px white;
-    border-radius: 5px;
     width: 200px;
     height: 40px;
-    background-color: green;
-    color: white;
     margin-top: 25px;
 }
 
@@ -269,18 +275,8 @@ div.container.status {
 
 .back-to-main-page, .play-again {
     text-align: center;
-    border: solid 1px white;
-    border-radius: 5px;
-    width: 200px;
-    height: 40px;
-    background-color: green;
-    color: white;
-
 }
 
-#back-to-main-page, #play-again {
-    margin-top: 55px;
-}
 
 .back-to-main-page a {
     text-decoration: none;

@@ -134,7 +134,13 @@ document.querySelector('#next').addEventListener('click', () => {
 });
 
 //------------- Score Page
-document.querySelector('#see-your-score').addEventListener('click', () => {
+document.querySelector('.end-game').addEventListener('click', () => {
+    $('#quiz-background').hide();
+    $('.score-page').show();
+});
+
+
+document.querySelector('.see-your-score').addEventListener('click', () => {
     $('#quiz-background').hide();
     $('.score-page').show();
 });
