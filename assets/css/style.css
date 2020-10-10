@@ -104,25 +104,25 @@ section .d-flex{
 
 /*------------------------ Status Bar */
 
-
-
-/* .container {
-    height: 20px;
-    padding: 0;
-    justify-content: center;
-} */
-
 .status-bar {
 
     border: transparent solid 1px;
     border-radius: 10px;
     height: 25px;
+    width: 80vw;
+    max-width: 850px;
     padding: 0;
-    /* position: relative; */
+    position: relative;
     background-color: black;
-    max-width: 500px;
-    display: flex;
 
+
+}
+
+div.container.status {
+    display: flex;
+    justify-items: center;
+    width: 80vw;
+    max-width: 850px;
 }
 
 
@@ -142,7 +142,6 @@ section .d-flex{
 .b {
     color: white;
     text-align:  center;
-    z-index: 20;
     position: absolute;
     padding: 0;
     margin: 0;
@@ -159,10 +158,12 @@ section .d-flex{
 
 #quiz-page-background {
     background-color: #0049b7;
+    width: 100vw;
+    height: 100vh;
 }
 
 #quiz-background {
-    justify-items: center;
+    /* justify-items: center; */
     width: 100vw;
     height: 100vh;
     padding: 10%;
@@ -173,7 +174,7 @@ section .d-flex{
 .quiz-container {
     padding: 10px;
     margin: 0;
-    justify-items: center;
+    /* justify-items: center; */
     text-align: center;
 }
 
@@ -311,7 +312,7 @@ section .d-flex{
         min-width: 270px;
         min-height: 270px;
       }
-      p {
+      .circle-content p {
           display: none;
       }
 
