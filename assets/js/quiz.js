@@ -9,7 +9,7 @@ let choice;
 let quizPage;
 
 window.onload = function () {
-    // $('#see-your-score').hide();
+    $('.see-your-score').hide();
     $('#next').hide();
     $('.score-page').hide();
     $('.q1').addClass('green');
@@ -47,7 +47,6 @@ function loadNextRound(data) {
     document.getElementById("difficulty").innerHTML = `Difficulty: ${difficulty}`;
 
     answers.forEach(answer => {
-        answers = Math.floor(Math.random() * 4);
             output.push(
                 `<div class="row d-flex justify-content-center js-otput no-gutters" >
                     <label class="col options" data-toggle="buttons">
@@ -70,10 +69,12 @@ function loadNextRound(data) {
                     if ($(option).find('input').first().prop('disabled')) return
                     $(option).addClass('green');
                     $(option).parents().closest('div.answers').find('input').attr("disabled", true);
-                }, {once: true});
+                });
 
                 if (questionCounter < 10){
-                    $('#next').show()
+                    $('#next').show();
+                } else if(questionCounter == 10) {
+                    $('#see-your-score').show();
                 }
             });
              
@@ -93,7 +94,7 @@ function loadNextRound(data) {
                 }
                 });
             }
-        }, {once: true});
+        });
     });  
     
     
@@ -145,16 +146,6 @@ document.querySelector('.see-your-score').addEventListener('click', () => {
     $('.score-page').show();
 });
 
-document.querySelector('.play-again').addEventListener('click', () => {
-    $('#see-your-score').hide();
-    quiz.innerHTML = "";
-    output = [];
-    questionCounter = 0;
-    score = 0;
-    $('#quiz-background').show();
-    $('#next').hide();
-    $('.score-page').hide();
-    $('.q1').addClass('green');
-    getData();
-});
-    
+
+
+
