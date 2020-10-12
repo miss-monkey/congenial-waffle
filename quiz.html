@@ -1,70 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Trivia quiz</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Trivia quiz</title>
 </head>
+
 <body id="quiz-page-background">
-    <div id="quiz-background">
-        <div class="container status">
-            <div class="row status-bar no-gutters">
-                <div class="q1 col-2"></div>
-                <div class="q2 col-1"></div>
-                <div class="q3 col-1"></div>
-                <div class="q4 col-1"></div>
-                <div class="q5 col-1"></div>
-                <div class="q6 col-1"></div>
-                <div class="q7 col-1"></div>
-                <div class="q8 col-1"></div>
-                <div class="q9 col-1"></div>
-                <div class="q10 col-2"></div>
-                <div class=" b col-12 text-center"><p class="text-center c"><span id="question-counter"></span> / 10</p></div>
-            </div>
-        </div>
-        <div class="menu-buttons row">
-            <div class="col back-to-main-page d-flex justify-content-center">
-                <button class="btn btn-success"><a href="index.html">Back To Main Page</a></button>
-            </div>
-            <div class="col end-game d-flex justify-content-center">
-                <button class="btn btn-success">End Game</button>
-            </div>
-        </div>
-        <div class="quiz-container">
-            <div id="question"></div>
-            <div id="difficulty"></div>
-            <div class="answers"></div>
-            <div class="z">
-            <div class="row no-gutters d-flex justify-content-center ">
-                <div class="col btn-container">
-                    <button id="next">Next</button>
-                </div>
-            </div>
-            <div class="row no-gutters d-flex justify-content-center ">
-                <div class="col btn-container">
-                    <button class="see-your-score btn btn-success">See Your Score</button>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div class="score-page">
-        <div class="score-container container">
-            <div class="row d-flex justify-content-center no-gutters">
-                <div class="col score-page-heading"><h4>Your score is:<br> <span id="score">0</span></h4></div>
-            </div>
-            <div class="row d-flex justify-content-center no-gutters score-page-buttons">
-                <div id="play-again" class="col btn-container d-flex justify-content-center">
-                    <button class="btn btn-success play-again">Play Again</button>
-                </div>
-                <div class="col btn-container d-flex justify-content-center">
-                    <button class="btn btn-success back-to-main-page"><a href="index.html">Back To Main Page</a></button></div>
-                </div>
-        </div>
-    </div>
-<script src="assets/js/quiz.js"></script>
+	<div id="quiz-background">
+		<div class="container status">
+			<div class="row status-bar no-gutters">
+				<div class="q1 col-2"></div>
+				<div class="q2 col-1"></div>
+				<div class="q3 col-1"></div>
+				<div class="q4 col-1"></div>
+				<div class="q5 col-1"></div>
+				<div class="q6 col-1"></div>
+				<div class="q7 col-1"></div>
+				<div class="q8 col-1"></div>
+				<div class="q9 col-1"></div>
+				<div class="q10 col-2"></div>
+				<div class=" b col-12 text-center">
+					<p class="text-center c"><span id="question-counter"></span> / 10</p>
+				</div>
+			</div>
+		</div>
+		<div class="menu-buttons row">
+			<div class="col back-to-main-page d-flex justify-content-center">
+				<button class="btn btn-success"><a href="index.html">Back To Main Page</a></button>
+			</div>
+			<div class="col end-game d-flex justify-content-center">
+				<button class="btn btn-success">End Game</button>
+			</div>
+		</div>
+		<div class="quiz-container">
+			<div id="question"></div>
+			<div id="difficulty"></div>
+			<div class="answers"></div>
+			<div class="z">
+				<div class="row no-gutters d-flex justify-content-center ">
+					<div class="col btn-container">
+						<button id="next">Next</button>
+					</div>
+				</div>
+				<div class="row no-gutters d-flex justify-content-center ">
+					<div class="col btn-container">
+						<button class="see-your-score btn btn-success">See Your Score</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="score-page">
+		<div class="score-container container">
+			<div class="row d-flex justify-content-center no-gutters">
+				<div class="col score-page-heading">
+					<h4>Your score is:<br> <span id="score">0</span></h4>
+				</div>
+			</div>
+			<div class="row d-flex justify-content-center no-gutters score-page-buttons">
+
+				<div class="col btn-container d-flex justify-content-center">
+					<button class="btn btn-success back-to-main-page"><a href="index.html">Back To Main Page</a></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="assets/js/quiz.js"></script>
 </body>
+
 </html>

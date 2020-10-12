@@ -74,7 +74,7 @@ function loadNextRound(data) {
                 if (questionCounter < 10){
                     $('#next').show();
                 } else if(questionCounter == 10) {
-                    $('#see-your-score').show();
+                    $('.see-your-score').show();
                 }
             });
              
@@ -90,7 +90,7 @@ function loadNextRound(data) {
                 if (questionCounter < 10){
                     $('#next').show();
                 } else if(questionCounter == 10) {
-                    $('#see-your-score').show();
+                    $('.see-your-score').show();
                 }
                 });
             }
