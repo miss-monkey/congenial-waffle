@@ -163,6 +163,10 @@ div.container.status {
 
 
 /*------------------------ Quiz */
+.back-to-main-page, .end-game {
+    max-width: 5git00px;
+}
+
 .menu-buttons {
     padding-top: 10%;
 
@@ -258,11 +262,7 @@ div.container.status {
 /*------------------------ Score Page */
 .score-container {
     margin-top: 25%;
-    
-
 }
-
-
 
 .score-page-heading h4 {
     color: white;
