@@ -168,13 +168,6 @@ div.container.status {
 
 }
 
-/* button a {
-    text-decoration: none;
-    color: white;
-    padding: 5px;
-} */
-
-
 #quiz-page-background {
     background-color: #0049b7;
     width: 100vw;
@@ -209,8 +202,6 @@ div.container.status {
 }
 
 
-
-
 .choices {
     position: absolute;
     left: 0;
@@ -237,13 +228,11 @@ div.container.status {
 }
 
 
-
 .btn-container{
     padding: 5px;
     max-width: 500px;
     height: auto;
     margin: 0;
-
 }
 
 
@@ -252,11 +241,11 @@ div.container.status {
     text-align: center;
     border: solid 1px white;
     border-radius: 5px;
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 50px;
     background-color: green;
     color: white;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .see-your-score {
