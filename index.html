@@ -3,37 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <title>Trivia Quiz</title>
 </head>
 <body id="main-page-background">
-	<section class="d-flex justify-content-center">
-		<div class="main-page d-flex justify-content-center">
-			<div class="row d-flex justify-content-center">
-				<div class="circle-content">
-					<div class="col-12">
-						<h3>Are you ready for new quiz adventure?</h3>
-					</div>
-                    <div class="d-fex justify-content-center">
-					    <button class="btn rules" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-				            Rules
-				        </button>
-					<div class="collapse" id="collapseExample">
-						<div class="card card-body">
-							You will get 10 random difficulty questions. Each question has 4 answer options, choose the right one and be unbeatable!
-						</div>
-					</div>
-                    </div>
+	<div class="main-page">
+		<div class="row justify-content-center">
+			<div class="circle-content">
+				<div class="col-12">
+					<h3>Are you ready for new quiz adventure?</h3>
+					<button class="btn start-button mt-3"><a href="quiz.html">Let's go!</a></button>
 				</div>
-				<div class="col-12 d-flex justify-content-center">
-					<button class="btn start-button"><a href="quiz.html">Let's go!</a></button>
-				</div>
-	
 			</div>
 		</div>
-	</section>
+		<div>
+			<div class="card card-body mt-5">
+				<h3 class="font-italic">You will get 10 random difficulty questions. Each question has 4 answer options,
+					choose the right one and be unbeatable!</h3>
+			</div>
+		</div>
+	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="assets/js/index.js"></script>
 </body>
 </html>
