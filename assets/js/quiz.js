@@ -1,30 +1,31 @@
+// Variables defined here
 let quiz = document.querySelector('.answers');
 let output = [];
-let timer = [];
-let questionCounter = [];
-let score = 0;
+let questionCounter = document.getElementById("question-counter").innerHTML;
+questionCounter = 1;
+let score = [];
 let data;
-let currentQuestion = 0; // new variable to track where we are in the array of 10 questions. We start at 0, since that will the the first index in the array
+let currentQuestion = 0;
 let choice;
-let quizPage;
 
+// Page loads
 window.onload = function () {
     $('.see-your-score').hide();
     $('#next').hide();
     $('.score-page').hide();
-    $('.q1').addClass('green');
+    $('.done').hide();
     getData();
 }
 
+// Function to get data from api
 async function getData() {
     const responce = await fetch("https://opentdb.com/api.php?amount=10&category=9&type=multiple");
     data = await responce.json();
     console.log(data);
     loadNextRound(data);
-    questionCounter++;
-    document.getElementById("question-counter").innerHTML = questionCounter;
 }
 
+// Schuffle answer choices
 function shuffleOptions(options) {
     for (let i = options.length - 1; i > 0; i--) {
         const rand = Math.floor(Math.random() * i)
@@ -35,6 +36,7 @@ function shuffleOptions(options) {
     return options;
 }
 
+// Get questions and answers
 function loadNextRound(data) {
     let question = data.results[currentQuestion].question;
     const difficulty = data.results[currentQuestion].difficulty;
@@ -45,7 +47,7 @@ function loadNextRound(data) {
     var answers = shuffleOptions([correctAnswer, answer2, answer3, answer4]);
     document.getElementById("question").innerHTML = question;
     document.getElementById("difficulty").innerHTML = `Difficulty: ${difficulty}`;
-
+// Push answers to html
     answers.forEach(answer => {
             output.push(
                 `<div class="row d-flex justify-content-center js-otput no-gutters" >
@@ -57,10 +59,12 @@ function loadNextRound(data) {
             )
     });
     quiz.innerHTML = output.join('');
-    
+ 
+// Select an answer
    document.querySelectorAll('.choices').forEach(choice => {
-       
          choice.addEventListener('click', () => {
+            document.getElementById("question-counter").innerHTML = questionCounter;
+            questionCounter++;
             if (choice.value == correctAnswer) { 
                 score++;
                 document.getElementById("score").innerHTML = score;
@@ -70,12 +74,6 @@ function loadNextRound(data) {
                     $(option).addClass('green');
                     $(option).parents().closest('div.answers').find('input').attr("disabled", true);
                 });
-
-                if (questionCounter < 10){
-                    $('#next').show();
-                } else if(questionCounter == 10) {
-                    $('.see-your-score').show();
-                }
             });
              
             } else {
@@ -85,56 +83,55 @@ function loadNextRound(data) {
                         $(option).addClass('red');
                         $(option).parents().closest('div.answers').find('input').attr("disabled", true);
                     });
-                    
-                   
-                if (questionCounter < 10){
-                    $('#next').show();
-                } else if(questionCounter == 10) {
-                    $('.see-your-score').show();
-                }
                 });
             }
-        });
+
+                if (questionCounter < 11){
+                    $('#next').show();
+                } else if(questionCounter == 11) {
+                    $('.see-your-score').show();
+                }
+
+// Status bar
+    if(questionCounter == 2) {
+        $('.q1').addClass('tenne');
+    } else if(questionCounter == 3) {
+        $('.q2').addClass('tenne');
+    } else if(questionCounter == 4) {
+        $('.q3').addClass('tenne');
+    } else if(questionCounter == 5) {
+        $('.q4').addClass('tenne');
+    } else if(questionCounter == 6) {
+        $('.q5').addClass('tenne');
+    }else if(questionCounter == 7) {
+        $('.q6').addClass('tenne');
+    } else if(questionCounter == 8) {
+        $('.q7').addClass('tenne');
+    } else if(questionCounter == 9) {
+        $('.q8').addClass('tenne');
+    } else if(questionCounter == 10) {
+        $('.q9').addClass('tenne');
+    } else if(questionCounter == 11) {
+        $('.q10').addClass('tenne');
+        $('.status-text').hide();
+        $('.done').show();
+    }
+   });
     });  
-    
-    
 }
 
 
-//-------------- Next Button
-
+// Next button loads next question
 document.querySelector('#next').addEventListener('click', () => {
     quiz.innerHTML = "";
     output = [];
     currentQuestion += 1;
-    questionCounter++;
-    document.getElementById("question-counter").innerHTML = questionCounter;
     loadNextRound(data);
     $('#next').hide('slow'); 
-//-------------- Status Bar
-    
-    if(questionCounter == 2) {
-        $('.q2').addClass('green');
-    } else if(questionCounter == 3) {
-        $('.q2, .q3').addClass('green');
-    } else if(questionCounter == 4) {
-        $('.q2, q3, .q4').addClass('green');
-    } else if(questionCounter == 5) {
-        $('.q2, .q3, .q4, .q5').addClass('green');
-    } else if(questionCounter == 6) {
-        $('.q2, .q3, .q4, .q5, .q6').addClass('green');
-    }else if(questionCounter == 7) {
-        $('.q2, .q3, .q4, .q5, .q6, .q7').addClass('green');
-    } else if(questionCounter == 8) {
-        $('.q2, .q3, .q4, .q5, .q6, .q7, .q8').addClass('green');
-    } else if(questionCounter == 9) {
-        $('.q2, .q3, .q4, .q5, .q6, .q7, .q8, .q9').addClass('green');
-    } else {
-        $('.q2, .q3, .q4, .q5, .q6, .q7, .q8, .q9, .q10').addClass('green');
-    }
 });
-
-//------------- Score Page
+    
+    
+// Buttons leading to score page
 document.querySelector('.end-game').addEventListener('click', () => {
     $('#quiz-background').hide();
     $('.score-page').show();
@@ -145,7 +142,3 @@ document.querySelector('.see-your-score').addEventListener('click', () => {
     $('#quiz-background').hide();
     $('.score-page').show();
 });
-
-
-
-
