@@ -53,19 +53,9 @@
     width: 150px;
     height: 50px;
     background-color: rgba(165, 165, 22, 0.5);
-    padding: 0;
     font-weight: bold;
     border-radius: 10px;
-}
-
-.start-button a{
     font-size: 20px;
-    text-decoration: none;
-    color: black;
-}
-
-.start-button a:hover {
-    color: whitesmoke;
 }
 
 .start-button:hover {
