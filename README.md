@@ -1,6 +1,10 @@
 # Trivia Quiz
 
-[View the live project here.](https://miss-monkey.github.io/quiz/.)
+## [View the live project here.](https://miss-monkey.github.io/quiz/.)
+
+## [Link to GitHub repository.](https://github.com/miss-monkey/quiz)
+
+![Mockup Generator](wireframes/mockup_generator.png)
 
 For my Frontend Development milestone project I have created Trivia Quiz.
 The website has home page where user can see short description of how to play, quiz page where all questions are fetched from public api and score page where user can see results.
@@ -22,6 +26,18 @@ For user stories I asked my friends' who are real quiz fans opinion.
 
 ### Wireframes 
 I used Balsamiq to design my project.
+
+![Home desktop](wireframes/home-desktop.png)
+
+![Quiz desktop](wireframes/quiz-desktop.png)
+
+![Score desktop](wireframes/score-desktop.png)
+
+![Home mobile](wireframes/home-mobile.png)
+
+![Quiz mobile](wireframes/quiz-mobile.png)
+
+![Score mobile](wireframes/score-mobile.png)
 
 ## Features
  
