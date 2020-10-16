@@ -8,6 +8,14 @@ let data;
 let currentQuestion = 0;
 let choice;
 
+// Function to get data from api
+async function getData() {
+    const responce = await fetch("https://opentdb.com/api.php?amount=10&category=9&type=multiple");
+    data = await responce.json();
+    loadNextRound(data);
+}
+
+
 // Page loads
 window.onload = function () {
     $('.see-your-score').hide();
@@ -15,15 +23,8 @@ window.onload = function () {
     $('.score-page').hide();
     $('.done').hide();
     getData();
-}
+    }
 
-// Function to get data from api
-async function getData() {
-    const responce = await fetch("https://opentdb.com/api.php?amount=10&category=9&type=multiple");
-    data = await responce.json();
-    console.log(data);
-    loadNextRound(data);
-}
 
 // Schuffle answer choices
 function shuffleOptions(options) {
