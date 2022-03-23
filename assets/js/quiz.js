@@ -19,7 +19,8 @@ async function getData() {
 // Page loads
 window.onload = function () {
     $('.see-your-score').hide();
-    $('#next').hide();
+    // $('#next').hide();
+    document.getElementById("next").disabled = true;
     $('.score-page').hide();
     $('.done').hide();
     getData();
@@ -74,6 +75,7 @@ function loadNextRound(data) {
                     if ($(option).find('input').first().prop('disabled')) return
                     $(option).addClass('green');
                     $(option).parents().closest('div.answers').find('input').attr("disabled", true);
+                    document.getElementById("next").disabled = false;
                 });
             });
              
@@ -83,13 +85,17 @@ function loadNextRound(data) {
                         if ($(option).find('input').first().prop('disabled')) return
                         $(option).addClass('red');
                         $(option).parents().closest('div.answers').find('input').attr("disabled", true);
+                        document.getElementById("next").disabled = false;
                     });
                 });
+                
+                
             }
 
                 if (questionCounter < 11){
                     $('#next').show();
                 } else if(questionCounter == 11) {
+                    $('#next').hide();
                     $('.see-your-score').show();
                 }
 
@@ -128,7 +134,7 @@ document.querySelector('#next').addEventListener('click', () => {
     output = [];
     currentQuestion += 1;
     loadNextRound(data);
-    $('#next').hide('slow'); 
+    document.getElementById("next").disabled = true;
 });
     
     
